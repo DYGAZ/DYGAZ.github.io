@@ -16,15 +16,19 @@
 		<script src="js/config.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
+		<script src="js/portfolio.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/portfolio.css" />
 		</noscript>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 	</head>
 	<body class="homepage">
-
+		<div id="overlay" class="modal">
+			
+		</div>
 		<!-- Header Wrapper -->
 			<div id="header-wrapper">
 				<div class="container">
@@ -86,6 +90,19 @@
 										<div class="row">
 											<div class="4u">
 												<section class="box">
+													<a class="image image-full"><img src="images/RAH.png" alt="" /></a>
+													<header>
+														<h3>Remote Automated Horticulture</h3>
+														<span class="byline">May 2014 - August 2014</span>
+													</header>
+													<p>Full semester Senior Design Project focused on monitoring, controlling and automating an indoor garden environment from a remote mobile application.</p>
+													<footer>
+														<button onmousedown=toggleOverlay("RAH") class="button alt">Find out more</button>
+													</footer>
+												</section>
+											</div>
+											<div class="4u">
+												<section class="box">
 													<a class="image image-full"><img src="images/quadcopter.jpg" alt="" /></a>
 													<header>
 														<h3>Quadcopter</h3>
@@ -93,7 +110,7 @@
 													</header>
 													<p>A part of the senior <i>Software Design and Development</i> course. This was an interdisciplinary project between computer science and mechanical engineering students. </p>
 													<footer>
-														<a href="#" class="button alt">Find out more</a>
+														<button onmousedown=toggleOverlay("Quad") class="button alt">Find out more</button>
 													</footer>
 												</section>
 											</div>
@@ -106,10 +123,12 @@
 													</header>
 													<p>In collaboration with another computer science student I taught a ninety minute lesson on the basics of Raspberry Pi, Arduino and serial communication.</p>
 													<footer>
-														<a href="#" class="button alt">Find out more</a>
+														<button onmousedown=toggleOverlay("BFF") class="button alt">Find out more</button>
 													</footer>
 												</section>
 											</div>
+										</div>
+										<div class="row">
 											<div class="4u">
 												<section class="box">
 													<a class="image image-full"><img src="images/CRMWebIDE.PNG" alt="" /></a>
@@ -119,7 +138,33 @@
 													</header>
 													<p>A Google Chrome web application for developing a code base in collaboration with a GitHub repository. Allows users to develop in the Google Chrome browser or on Chrome OS. </p>
 													<footer>
-														<a href="#" class="button alt">Find out more</a>
+														<button onmousedown=toggleOverlay("CRM") class="button alt">Find out more</button>
+													</footer>
+												</section>
+											</div>
+											<div class="4u">
+												<section class="box">
+													<a class="image image-full"><img src="images/prvrPort.png" alt="" /></a>
+													<header>
+														<h3>PRVR</h3>
+														<span class="byline">February 2013 - March 2013</span>
+													</header>
+													<p>Realtime graphics demonstration of procedural terrain generation that placed second in the combined demo competition at The Gathering 2013 in Hamar, Norway.</p>
+													<footer>
+														<button onmousedown=toggleOverlay("PRVR") class="button alt">Find out more</button>
+													</footer>
+												</section>
+											</div>
+											<div class="4u">
+												<section class="box">
+													<a class="image image-full"><img src="images/REM.png" alt="" /></a>
+													<header>
+														<h3>REM</h3>
+														<span class="byline">January 2012 - April 2012</span>
+													</header>
+													<p>Realtime graphics demonstration done as an independent project for a graphics course. Placed third in the combined demo competition at The Gathering 2012 in Hamar, Norway.</p>
+													<footer>
+														<button onmousedown=toggleOverlay("REM") class="button alt">Find out more</button>
 													</footer>
 												</section>
 											</div>
@@ -127,40 +172,14 @@
 										<div class="row">
 											<div class="4u">
 												<section class="box">
-													<a href="http://facebook.com/DreametryDoodle" class="image image-full"><img src="images/prvrPort.png" alt="" /></a>
-													<header>
-														<h3>PRVR</h3>
-														<span class="byline">February 2013 - March 2013</span>
-													</header>
-													<p>Realtime graphics demonstration of procedural terrain generation that placed second in the combined demo competition at The Gathering 2013 in Hamar, Norway.</p>
-													<footer>
-														<a href="#" class="button alt">Find out more</a>
-													</footer>
-												</section>
-											</div>
-											<div class="4u">
-												<section class="box">
-													<a href="http://facebook.com/DreametryDoodle" class="image image-full"><img src="images/REM.png" alt="" /></a>
-													<header>
-														<h3>REM</h3>
-														<span class="byline">January 2012 - April 2012</span>
-													</header>
-													<p>Realtime graphics demonstration done as an independent project for a graphics course. Placed third in the combined demo competition at The Gathering 2012 in Hamar, Norway.</p>
-													<footer>
-														<a href="#" class="button alt">Find out more</a>
-													</footer>
-												</section>
-											</div>
-											<div class="4u">
-												<section class="box">
-													<a href="http://facebook.com/DreametryDoodle" class="image image-full"><img src="images/nitesco.png" alt="" /></a>
+													<a class="image image-full"><img src="images/nitesco.png" alt="" /></a>
 													<header>
 														<h3>Nitesco</h3>
 														<span class="byline">February 2011 - April 2011</span>
 													</header>
 													<p>Realtime graphics demonstration completed in my freshmen year at Wentworth. Placed 5th in the combined demo competition at The Gathering 2011 in Hamar, Norway.</p>
 													<footer>
-														<a href="#" class="button alt">Find out more</a>
+														<button onmousedown=toggleOverlay("Nitesco") class="button alt">Find out more</button>
 													</footer>
 												</section>
 											</div>
